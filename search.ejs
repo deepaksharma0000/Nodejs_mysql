@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Student</title>
+    </head>
+    <body>
+        <html>
+            <head>
+                <title>Student</title>
+            </head>
+            <body>
+                <h1>Students List</h1>
+        
+                <table border="1px solid black" width="100%">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile No</th>
+                        <th>Action</th>
+                    </tr>
+                    <% if(student.length > 0){ %>
+                        <% for(var i=0;i<student.length;i++){ %>
+                            <tr>
+                                <td><%- student[i].id %></td>
+                                <td><%- student[i].name%></td>
+                                <td><%- student[i].Email%></td>
+                                <td><%- student[i].MobileNo%></td>
+                                <td><a href="/delete?id=<%- student[i].id %>"><button>Delete</button></a> 
+                                <a href="/Edit?id=<%- student[i].id %>"> <button>Edit</button></a></td>
+                            </tr>
+                            <% }%>
+        
+                        <% }else{%>
+                            <h1>Student Data Not Found </h1>
+        
+                            <% }%>
+        
+                </table>
+            </body>
+        </html>
+
+
+
+        <h1>Students List</h1>
+
+        <table border="1px solid black" width="100%">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+             
+            </tr>
+            <% if(student.length > 0){ %>
+                <% for(var i=0;i<student.length;i++){ %>
+                    <tr>
+                        <td><%- student[i].id %></td>
+                        <td><%- student[i].name%></td>
+                        <td><%- student[i].Email%></td>
+                        <td><%- student[i].MobileNo%></td>
+                    </tr>
+                    <% }%>
+
+                <% }else{%>
+                    <h1>Student Data Not Found </h1>
+
+                    <% }%>
+
+        </table>
+    </body>
+</html>
